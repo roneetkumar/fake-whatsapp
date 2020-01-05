@@ -1,0 +1,48 @@
+.display-wrapper {
+    width: 460px;
+    margin: auto;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.display-wrapper h1 {
+    margin-top: 40px;
+    font-size: 34px;
+    font-weight: lighter;
+    color: #525252;
+}
+
+.display-wrapper h4 {
+    margin-top: 36px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .45);
+    font-weight: lighter;
+    line-height: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+
+.display-wrapper .link {
+    display: flex;
+    align-items: center;
+}
+
+.display-wrapper span {
+    margin-left: 8px;
+}
+
+.display-wrapper span a {
+    color: #07bc4c;
+}
+
+.display-wrapper svg {
+    border-radius: initial;
+    padding: initial;
+}
+
+.display-wrapper svg:hover {
+    background: initial;
+}

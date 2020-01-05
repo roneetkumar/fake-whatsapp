@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-shadow: inset 0 0 0 1px #000; */
+}
+
+body {
+    font-family: Google Sans, sans-serif;
+    user-select: none;
+    background-color: #e0e0e0;
+}
+
+#root {
+    height: 100vh;
+}
+
+#root::before {
+    content: "";
+    height: 127px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    background-color: #009688
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}

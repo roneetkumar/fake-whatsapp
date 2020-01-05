@@ -1,0 +1,60 @@
+.chatter {
+    display: grid;
+    grid-template-rows: 60px 1fr 60px;
+}
+
+.chatter header {
+    height: 60px;
+    background: #ededed;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content max-content max-content;
+    align-items: center;
+    grid-column-gap: 6px;
+    padding-right: 10px;
+}
+
+.chatter h1 {
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+.chatter header img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    border-radius: 50%;
+}
+
+.chatter svg {
+    cursor: pointer;
+    padding: 8px;
+}
+
+.chatter form {
+    height: 60px;
+    background: #ededed;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: center;
+    grid-column-gap: 6px;
+    padding: 0 14px;
+}
+
+.chatter form input {
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 21px;
+    padding: 9px 12px 11px;
+    margin: 5px 10px;
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    min-height: 20px;
+    min-width: 0;
+    outline: none;
+    width: inherit;
+    will-change: width;
+}
