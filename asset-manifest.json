@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/notified/static/css/main.4ae32a29.chunk.css",
+    "main.js": "/notified/static/js/main.e9f948fe.chunk.js",
+    "main.js.map": "/notified/static/js/main.e9f948fe.chunk.js.map",
+    "runtime-main.js": "/notified/static/js/runtime-main.2e245a93.js",
+    "runtime-main.js.map": "/notified/static/js/runtime-main.2e245a93.js.map",
+    "static/js/2.cfa7844c.chunk.js": "/notified/static/js/2.cfa7844c.chunk.js",
+    "static/js/2.cfa7844c.chunk.js.map": "/notified/static/js/2.cfa7844c.chunk.js.map",
+    "index.html": "/notified/index.html",
+    "precache-manifest.862aea68282c74b409429a58bacfc1ee.js": "/notified/precache-manifest.862aea68282c74b409429a58bacfc1ee.js",
+    "service-worker.js": "/notified/service-worker.js",
+    "static/css/main.4ae32a29.chunk.css.map": "/notified/static/css/main.4ae32a29.chunk.css.map",
+    "static/js/2.cfa7844c.chunk.js.LICENSE": "/notified/static/js/2.cfa7844c.chunk.js.LICENSE",
+    "static/media/attach.cb49181e.svg": "/notified/static/media/attach.cb49181e.svg",
+    "static/media/emoji.d9ac8889.svg": "/notified/static/media/emoji.d9ac8889.svg",
+    "static/media/mac.57fbd7e3.svg": "/notified/static/media/mac.57fbd7e3.svg",
+    "static/media/menu.db245711.svg": "/notified/static/media/menu.db245711.svg",
+    "static/media/message.f59ccbb6.svg": "/notified/static/media/message.f59ccbb6.svg",
+    "static/media/mic.97b76eba.svg": "/notified/static/media/mic.97b76eba.svg",
+    "static/media/search.a87eca9e.svg": "/notified/static/media/search.a87eca9e.svg",
+    "static/media/status.9f2ba24c.svg": "/notified/static/media/status.9f2ba24c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2e245a93.js",
+    "static/js/2.cfa7844c.chunk.js",
+    "static/css/main.4ae32a29.chunk.css",
+    "static/js/main.e9f948fe.chunk.js"
+  ]
+}
