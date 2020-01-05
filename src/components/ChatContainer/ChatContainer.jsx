@@ -16,7 +16,7 @@ export default class ChatContainer extends Component {
 
         return (
             <div className='chat-container'>
-                <Router>
+                <Router basename={process.env.PUBLIC_URL}>
                     <ContactList
                         onChange={contact => this.setState({ contact })} />
                     <Switch>
