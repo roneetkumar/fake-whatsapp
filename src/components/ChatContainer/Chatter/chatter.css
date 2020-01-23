@@ -1,6 +1,6 @@
 .chatter {
     display: grid;
-    grid-template-rows: 60px 1fr 60px;
+    grid-template-rows: 60px 1fr max-content;
 }
 
 .chatter header {
@@ -11,6 +11,7 @@
     align-items: center;
     grid-column-gap: 6px;
     padding-right: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, .08);
 }
 
 .chatter h1 {
@@ -32,16 +33,30 @@
 }
 
 .chatter form {
-    height: 60px;
+    max-height: 100px;
     background: #ededed;
     display: grid;
     grid-template-columns: max-content 1fr max-content;
     align-items: center;
-    grid-column-gap: 6px;
-    padding: 0 14px;
+    padding: 5px 10px;
 }
 
-.chatter form input {
+.chatter form .input-wrapper {
+    font-size: 15px;
+    font-weight: 400;
+    max-height: 100px;
+    min-height: 20px;
+    outline: none;
+    position: relative;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.chatter form .input-wrapper .input {
+    overflow-x: hidden;
+    overflow-y: hidden;
     background-color: #fff;
     border: 1px solid #fff;
     border-radius: 21px;
@@ -53,8 +68,19 @@
     font-weight: 400;
     line-height: 20px;
     min-height: 20px;
+    max-height: 77px;
     min-width: 0;
     outline: none;
     width: inherit;
     will-change: width;
+}
+
+[contenteditable=true]:empty:before {
+    content: attr(placeholder);
+    color: grey;
+}
+
+main {
+    background: url('https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png'), #e5ddd5;
+    background-blend-mode: soft-light;
 }

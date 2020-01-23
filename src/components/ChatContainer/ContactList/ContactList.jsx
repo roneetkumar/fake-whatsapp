@@ -200,9 +200,8 @@ export default class ContactList extends Component {
 
     clickHandler = (contact) => this.props.onChange(contact)
 
-
-
     render() {
+
         return (
             <div className='contact-list-container'>
                 <header>
@@ -217,7 +216,6 @@ export default class ContactList extends Component {
                         <input type="text" placeholder="Search or start new chat" />
                     </div>
                 </div>
-
 
                 <div className="contact-list-items" >
                     {

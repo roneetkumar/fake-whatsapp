@@ -8,7 +8,7 @@ export default class ContactListItem extends Component {
 
     render() {
         return (
-            <Link to={this.props.contact.name.toLowerCase()}>
+            <Link to={`/user/${this.props.contact.name.toLowerCase()}`}>
                 <div
                     className="contact-list-item"
                     onClick={() => this.props.onChange()}>
@@ -21,8 +21,8 @@ export default class ContactListItem extends Component {
                         <h5>
                             {this.props.contact.messages[0].content}
                         </h5>
-                        <span>span1</span>
-                        <span>span2</span>
+                        <span>{this.props.contact.messages[0].date}</span>
+                        <span></span>
                     </div>
                 </div>
             </Link>
