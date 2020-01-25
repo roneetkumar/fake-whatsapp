@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./app.css"
 import ChatContainer from "./ChatContainer/ChatContainer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Index from './Index/Index';
+import { Index } from './Index/Index';
 import { auth, createUserProfileDocument } from "./Firebase"
 
 
@@ -14,26 +14,19 @@ export default class App extends Component {
     unsubscribeFromAuth = null;
 
     componentDidMount() {
-        // console.log('mounted')
         this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
             if (userAuth) {
                 const userRef = await createUserProfileDocument(userAuth);
                 userRef.onSnapshot(snapshot => {
                     this.setState({
-                        user: {
-                            displayName: snapshot.displayName,
-                            email: snapshot.email,
-                            ...snapshot.data()
-                        }
-                    }, () => console.log(this.state.user)
-                    )
+                        user: { ...snapshot.data() }
+                    })
                 })
             }
+            this.setState({ user: userAuth })
         })
 
-        if (this.state.user) {
-            this.props.history.push('/user')
-        }
+        if (this.state.user) this.props.history.push('/user')
     }
 
     componentWillUnmount() {
@@ -43,10 +36,6 @@ export default class App extends Component {
     render() {
         return (
             <React.Fragment>
-                {
-                    // console.log(this.state.user)
-
-                }
                 <Router basename={process.env.PUBLIC_URL}>
                     <Switch>
                         <Route exact path="/">
