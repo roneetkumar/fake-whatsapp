@@ -1,29 +1,36 @@
 import React, { Component } from 'react';
 import FormInput from './FormInput'
+import { auth } from "../Firebase"
+import { withRouter } from 'react-router-dom';
 
-export default class SignIn extends Component {
+class SignIn extends Component {
     state = {
         email: '',
         password: '',
     }
 
-    handleChange = (e) => {
-        const { name, value } = e.target
-        this.setState({ [name]: value }, () => console.log(this.state)
-        )
+    handleSubmit = async e => {
+
+        e.preventDefault()
+        const { email, password } = this.state;
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            this.props.history.push("/user");
+            this.setState({ email: '', password: '' })
+        } catch (error) {
+            console.log(error);
+        }
     }
 
-    handleForm = (e) => {
-        e.preventDefault()
-        this.setState({
-            email: '',
-            password: ''
-        })
+    handleChange = (e) => {
+        const { name, value } = e.target
+        this.setState({ [name]: value })
     }
 
     render() {
         return (
-            <form onSubmit={this.handleForm}>
+            <form onSubmit={this.handleSubmit}>
                 <h1>index</h1>
                 <FormInput
                     name='email'
@@ -41,16 +48,17 @@ export default class SignIn extends Component {
                     handleChange={this.handleChange}
                     value={this.state.password}
                     required
-
                 />
                 {/* <button onClick={signInWithGoogle}> */}
                 {/* button */}
                 {/* </button> */}
                 <button type="submit">
                     button
-                    </button>
+                </button>
 
             </form>
         )
     }
 }
+
+export default withRouter(SignIn)

@@ -6,7 +6,7 @@
     background: #000;
     overflow: hidden;
     margin: auto;
-    background-color: #f7f7f7;
+    background-color: #f8f9fb;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2);
     display: grid;
     grid-template-columns: minmax(264px, 350px) 1fr;

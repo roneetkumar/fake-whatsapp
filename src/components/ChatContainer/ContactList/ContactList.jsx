@@ -206,6 +206,7 @@ export default class ContactList extends Component {
             <div className='contact-list-container'>
                 <header>
                     <img src="https://thispersondoesnotexist.com/image" alt="profile-pic" />
+                    <h5>{this.props.user?.displayName}</h5>
                     <StatusIcon title="Status" fill="rgba(0,0,0,0.4)" height="24px" width="24px" />
                     <MessageIcon title="Message" fill="rgba(0,0,0,0.4)" height="24px" width="24px" />
                     <MenuIcon title="Menu" fill="rgba(0,0,0,0.4)" height="24px" width="24px" />

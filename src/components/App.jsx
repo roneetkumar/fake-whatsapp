@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./app.css"
 import ChatContainer from "./ChatContainer/ChatContainer";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Index } from './Index/Index';
+import { Router, Switch, Route } from "react-router-dom";
+import Index from './Index/Index';
 import { auth, createUserProfileDocument } from "./Firebase"
-
+import history from "./history";
 
 export default class App extends Component {
     state = {
@@ -25,8 +25,6 @@ export default class App extends Component {
             }
             this.setState({ user: userAuth })
         })
-
-        if (this.state.user) this.props.history.push('/user')
     }
 
     componentWillUnmount() {
@@ -36,13 +34,13 @@ export default class App extends Component {
     render() {
         return (
             <React.Fragment>
-                <Router basename={process.env.PUBLIC_URL}>
+                <Router basename={process.env.PUBLIC_URL} history={history}>
                     <Switch>
                         <Route exact path="/">
                             <Index />
                         </Route>
                         <Route path="/user">
-                            <ChatContainer />
+                            <ChatContainer user={this.state.user} />
                         </Route>
                     </Switch>
                 </Router>

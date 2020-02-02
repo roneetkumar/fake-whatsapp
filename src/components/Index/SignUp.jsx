@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import FormInput from "./FormInput"
 import { auth, createUserProfileDocument } from "../Firebase"
+import { withRouter } from 'react-router-dom';
 
-export default class SignUp extends Component {
+
+class SignUp extends Component {
     state = {
         displayName: "",
         email: "",
@@ -21,8 +23,8 @@ export default class SignUp extends Component {
 
         try {
             const { user } = await auth.createUserWithEmailAndPassword(email, password)
-            await createUserProfileDocument(user, { displayName })
-
+            await createUserProfileDocument(user, { displayName });
+            this.props.history.push("/user");
             this.setState({
                 displayName: "",
                 email: "",
@@ -82,5 +84,7 @@ export default class SignUp extends Component {
         )
     }
 }
+
+export default withRouter(SignUp)
 
 

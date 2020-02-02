@@ -15,11 +15,7 @@ export default class ChatContainer extends Component {
     render() {
         return (
             <div className='chat-container'>
-
-                {/* <Route path="/user"> */}
-                <ContactList onChange={contact => this.setState({ contact })} />
-                {/* <Index /> */}
-                {/* </Route> */}
+                <ContactList user={this.props.user} onChange={contact => this.setState({ contact })} />
                 <Route exact path="/user">
                     <Display />
                 </Route>

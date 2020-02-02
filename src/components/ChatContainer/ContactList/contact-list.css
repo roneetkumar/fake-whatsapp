@@ -15,7 +15,7 @@
     height: 60px;
     background: #ededed;
     display: grid;
-    grid-template-columns: 1fr max-content max-content max-content;
+    grid-template-columns: max-content 1fr max-content max-content max-content;
     align-items: center;
     grid-column-gap: 6px;
     padding-right: 10px;
@@ -26,6 +26,10 @@
     height: 40px;
     margin: 0 10px;
     border-radius: 50%;
+}
+
+.contact-list-container header h5 {
+    font-size: 14px;
 }
 
 .contact-list-container .search-container {
