@@ -1,0 +1,38 @@
+.message.from {
+    margin: 20px 0;
+    text-align: right;
+}
+
+.from h1 {
+    background: #dcf8c6;
+    width: max-content;
+    display: inline-block;
+    margin-right: 9%;
+    padding: 6px 7px 8px 9px;
+    border-radius: 7.5px;
+    border-top-right-radius: 0;
+    font-size: 14.2px;
+    font-weight: normal;
+    position: relative;
+}
+
+.from h1::after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: -4px;
+    right: -5px;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 0 10px 17px 10px;
+    border-color: transparent transparent #dcf8c6 transparent;
+    transform: rotate(-60deg);
+}
+
+.from h1 span {
+    margin: 0 14px;
+    font-size: 11px;
+    transform: translateY(5px);
+    display: inline-block;
+}

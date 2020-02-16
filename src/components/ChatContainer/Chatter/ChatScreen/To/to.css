@@ -1,5 +1,0 @@
-.chatter .chat-screen .to {
-    display: grid;
-    grid-template-rows: auto;
-    justify-items: left;
-}

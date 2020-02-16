@@ -12,7 +12,31 @@ export default class ContactList extends Component {
     state = {
         contacts: [
             {
-                name: "roops",
+                name: "Joey Tribbiani",
+                messages: [
+                    {
+                        date: "12/2/2020",
+                        time: "12:20 PM",
+                        content: "hodor hodor Hodor!"
+                    },
+                    {
+                        date: "12/2/2020",
+                        time: "12:20 PM",
+                        content: "hoDOR hodor"
+                    },
+                    {
+                        date: "12/2/2020",
+                        time: "12:20 PM",
+                        content: "hooooDor"
+                    },
+                    {
+                        date: "12/2/2020",
+                        time: "12:20 PM",
+                        content: "hhooodoor ! hodor!"
+                    }
+                ]
+            }, {
+                name: "Phoebe Buffay",
                 messages: [
                     {
                         date: "12/2/2020",
@@ -24,7 +48,7 @@ export default class ContactList extends Component {
                     }
                 ]
             }, {
-                name: "vinays",
+                name: "Monica Geller",
                 messages: [
                     {
                         date: "12/2/2020",
@@ -36,7 +60,7 @@ export default class ContactList extends Component {
                     }
                 ]
             }, {
-                name: "shivams",
+                name: "Rachel Green",
                 messages: [
                     {
                         date: "12/2/2020",
@@ -48,7 +72,7 @@ export default class ContactList extends Component {
                     }
                 ]
             }, {
-                name: "sunils",
+                name: "Chandler Bing",
                 messages: [
                     {
                         date: "12/2/2020",
@@ -60,7 +84,7 @@ export default class ContactList extends Component {
                     }
                 ]
             }, {
-                name: "sharmas",
+                name: "Ross Geller",
                 messages: [
                     {
                         date: "12/2/2020",
@@ -72,7 +96,7 @@ export default class ContactList extends Component {
                     }
                 ]
             }, {
-                name: "roops",
+                name: "Janice Hosenstein",
                 messages: [
                     {
                         date: "12/2/2020",
@@ -84,7 +108,7 @@ export default class ContactList extends Component {
                     }
                 ]
             }, {
-                name: "vinays",
+                name: "Gunther",
                 messages: [
                     {
                         date: "12/2/2020",
@@ -96,19 +120,7 @@ export default class ContactList extends Component {
                     }
                 ]
             }, {
-                name: "shivams",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            }, {
-                name: "sunils",
+                name: "Ben Geller",
                 messages: [
                     {
                         date: "12/2/2020",
@@ -121,7 +133,7 @@ export default class ContactList extends Component {
                 ]
             },
             {
-                name: "sharmas",
+                name: "Mr. Heckles",
                 messages: [
                     {
                         date: "12/2/2020",
