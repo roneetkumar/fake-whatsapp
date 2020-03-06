@@ -1,5 +1,6 @@
 {
     "hosting": {
+        "site": "fake-whatsapp",
         "public": "build",
         "ignore": [
             "firebase.json",

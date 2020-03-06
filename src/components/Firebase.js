@@ -3,15 +3,15 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyB29qC-NSMWw3fOPaQMR3hW5k1lDBwq0IU",
-    authDomain: "whatsapp-707dd.firebaseapp.com",
+    authDomain: "fake-whatsapp.firebaseapp.com/",
     databaseURL: "https://whatsapp-707dd.firebaseio.com",
     projectId: "whatsapp-707dd",
     storageBucket: "whatsapp-707dd.appspot.com",
     messagingSenderId: "97138463993",
-    appId: "1:97138463993:web:40fb1c30d50561c073be28",
-    measurementId: "G-7CETW5KJ9J"
+    appId: "1:97138463993:web:32923b60208e9c5073be28",
+    measurementId: "G-TEQP4VKS9M"
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
