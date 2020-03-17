@@ -71,7 +71,7 @@
     max-height: 77px;
     min-width: 0;
     outline: none;
-    width: inherit;
+    width: 100%;
     will-change: width;
 }
 

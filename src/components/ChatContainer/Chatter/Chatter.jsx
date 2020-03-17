@@ -7,38 +7,32 @@ import { ReactComponent as AttachIcon } from '../../../svg/attach.svg';
 import { ReactComponent as EmojiIcon } from '../../../svg/emoji.svg';
 import { ReactComponent as MicIcon } from '../../../svg/mic.svg';
 
-import { firebase } from 'firebase'
-
+import firebase from 'firebase'
 import { firestore } from "../../Firebase"
 
 
 export default class Chatter extends Component {
-
-	onInputHandler = (event) => {
+	onInputHandler = event => {
 		var db = firestore.collection("users").doc("G9aeSPCcbgVS6RfJO84mitrubtw2");
 
-
-		if (event.key === 'Enter' && event.target.innerText.trim() !== '') {
+		if (event.key === 'Enter' && event.target.value.trim() !== '') {
 			console.log("enter pressed");
 
-			db.set({
+			db.update({
 				messages: firebase.firestore.FieldValue.arrayUnion({
 					to: "roop",
-					time: "ds",
-					message: event.target.innerText
+					time: new Date(),
+					message: this.props.input
 				})
-
 			}).then(() => {
 				console.log("Document successfully updated!");
-
+				this.props.onChange('')
 			}).catch(function (error) {
 				console.error("Error updating document: ", error);
 			});
 
-
 		} else {
 			console.log("key pressed");
-
 		}
 	}
 
@@ -58,12 +52,14 @@ export default class Chatter extends Component {
 				<form>
 					<EmojiIcon title="Menu" fill="rgba(0,0,0,0.4)" height="24px" width="24px" />
 					<div className="input-wrapper">
-						<div className="input"
-							contentEditable="true"
-							type="text"
+						<textarea className="input"
 							placeholder="Type a message"
 							onKeyPress={this.onInputHandler}
-						></div>
+							value={this.props.input}
+							onChange={event => {
+								this.props.onChange(event.target.value)
+							}}
+						></textarea>
 					</div>
 					<MicIcon title="Menu" fill="rgba(0,0,0,0.4)" height="24px" width="24px" />
 				</form>

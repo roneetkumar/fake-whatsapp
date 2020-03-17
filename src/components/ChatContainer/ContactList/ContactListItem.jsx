@@ -5,7 +5,6 @@ import "./contact-list-item.css"
 export default class ContactListItem extends Component {
     render() {
         return (
-            // <Link to={`/user/${this.props.contact.displayName}`}>
             <div
                 className="contact-list-item"
                 onClick={() => this.props.onChange()}>
@@ -16,13 +15,12 @@ export default class ContactListItem extends Component {
                         {this.props.contact.displayName}
                     </h3>
                     <h5>
-                        {`${new Date(this.props.contact.messages[0].time.seconds * 1000).toDateString()}`}
+                        {`${new Date(this.props.contact.messages[0]?.time.seconds * 1000).toDateString()}`}
                     </h5>
-                    <span>{`${new Date(this.props.contact.messages[0].time.seconds * 1000).toLocaleTimeString()}`}</span>
+                    <span>{`${new Date(this.props.contact.messages[0]?.time.seconds * 1000).toLocaleTimeString()}`}</span>
                     <span></span>
                 </div>
             </div>
-            // </Link>
         )
     }
 }
