@@ -7,29 +7,39 @@ import { ReactComponent as AttachIcon } from '../../../svg/attach.svg';
 import { ReactComponent as EmojiIcon } from '../../../svg/emoji.svg';
 import { ReactComponent as MicIcon } from '../../../svg/mic.svg';
 
-// import firebase from 'firebase'
+import { firebase } from 'firebase'
 
-// import { firestore } from "../../Firebase"
+import { firestore } from "../../Firebase"
 
 
 export default class Chatter extends Component {
 
-
 	onInputHandler = (event) => {
-		// var db = firestore.collection("users").doc("Vt9BkDiOObUjiWnndXODDvkd3RR2");
+		var db = firestore.collection("users").doc("G9aeSPCcbgVS6RfJO84mitrubtw2");
 
-		// if (event.key === 'Enter' && event.target.innerText.trim() !== '') {
-		// 	console.log(event.target.innerText);
 
-		// 	return db.({
-		// 		messages: firebase.firestore.FieldValue.arrayUnion(event.target.innerText)
-		// 	}).then(function () {
-		// 		console.log("Document successfully updated!");
-		// 	}).catch(function (error) {
-		// 		console.error("Error updating document: ", error);
-		// 	});
-		// }
+		if (event.key === 'Enter' && event.target.innerText.trim() !== '') {
+			console.log("enter pressed");
 
+			db.set({
+				messages: firebase.firestore.FieldValue.arrayUnion({
+					to: "roop",
+					time: "ds",
+					message: event.target.innerText
+				})
+
+			}).then(() => {
+				console.log("Document successfully updated!");
+
+			}).catch(function (error) {
+				console.error("Error updating document: ", error);
+			});
+
+
+		} else {
+			console.log("key pressed");
+
+		}
 	}
 
 	render() {
@@ -38,7 +48,7 @@ export default class Chatter extends Component {
 				<header>
 					<img src="https://thispersondoesnotexist.com/image" alt="img" />
 					<h1 className="name">
-						{this.props.contact.name}
+						{this.props.contact.displayName}
 					</h1>
 					<SearchIcon title="Search" fill="rgba(0,0,0,0.4)" height="24px" width="24px" />
 					<AttachIcon title="Attach" fill="rgba(0,0,0,0.4)" height="24px" width="24px" />

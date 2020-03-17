@@ -5,209 +5,42 @@ import { ReactComponent as MessageIcon } from '../../../svg/message.svg';
 import { ReactComponent as MenuIcon } from '../../../svg/menu.svg';
 import { ReactComponent as StatusIcon } from '../../../svg/status.svg';
 import ContactListItem from "./ContactListItem";
+// import { firebase } from "firebase";
+import { firestore } from "../../Firebase"
+
 
 
 export default class ContactList extends Component {
 
     state = {
-        contacts: [
-            {
-                name: "Joey Tribbiani",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        time: "12:20 PM",
-                        content: "hodor hodor Hodor!"
-                    },
-                    {
-                        date: "12/2/2020",
-                        time: "12:20 PM",
-                        content: "hoDOR hodor"
-                    },
-                    {
-                        date: "12/2/2020",
-                        time: "12:20 PM",
-                        content: "hooooDor"
-                    },
-                    {
-                        date: "12/2/2020",
-                        time: "12:20 PM",
-                        content: "hhooodoor ! hodor!"
-                    }
-                ]
-            }, {
-                name: "Phoebe Buffay",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            }, {
-                name: "Monica Geller",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            }, {
-                name: "Rachel Green",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            }, {
-                name: "Chandler Bing",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            }, {
-                name: "Ross Geller",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            }, {
-                name: "Janice Hosenstein",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            }, {
-                name: "Gunther",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            }, {
-                name: "Ben Geller",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            },
-            {
-                name: "Mr. Heckles",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            },
-            {
-                name: "roops",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            }, {
-                name: "vinays",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            }, {
-                name: "shivams",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            }, {
-                name: "sunils",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            }, {
-                name: "sharmas",
-                messages: [
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    },
-                    {
-                        date: "12/2/2020",
-                        content: "msg"
-                    }
-                ]
-            },
+        contacts: []
+    }
 
-        ]
+    componentDidMount() {
+        this.getListUser()
+    }
+
+    getListUser = async () => {
+        const result = await firestore.collection("users").get()
+        if (result.docs.length > 0) {
+            this.listUser = [...result.docs]
+
+
+            this.listUser.forEach(d => {
+                this.setState({
+                    contacts: [...this.state.contacts, d.data()]
+                })
+            })
+
+        }
+
+
+        // this.state.contacts.forEach(c => {
+        //     console.log(c.messages[0].message)
+        // })
+
+
+        // console.log(this.state.contacts[2].messages[0].message);
     }
 
     clickHandler = (contact) => this.props.onChange(contact)
