@@ -13,7 +13,7 @@ import { firestore } from "../../Firebase"
 
 export default class Chatter extends Component {
 	onInputHandler = event => {
-		var db = firestore.collection("users").doc("G9aeSPCcbgVS6RfJO84mitrubtw2");
+		var db = firestore.collection("users").doc(this.props.user.id);
 
 		if (event.key === 'Enter' && event.target.value.trim() !== '') {
 			console.log("enter pressed");

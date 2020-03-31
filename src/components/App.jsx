@@ -19,12 +19,14 @@ export default class App extends Component {
                 const userRef = await createUserProfileDocument(userAuth);
                 userRef.onSnapshot(snapshot => {
                     this.setState({
-                        user: { ...snapshot.data() }
+                        user: { ...snapshot.data(), id:snapshot.id },
                     })
                 })
             }
             this.setState({ user: userAuth })
         })
+
+
     }
 
     componentWillUnmount() {
@@ -33,10 +35,11 @@ export default class App extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <div className="HomePage">
                 <Router basename={process.env.PUBLIC_URL} history={history}>
                     <Switch>
                         <Route exact path="/">
+                            <img className="logo" src="./logo.png" alt=""/>
                             <Index />
                         </Route>
                         <Route path="/user">
@@ -44,7 +47,7 @@ export default class App extends Component {
                         </Route>
                     </Switch>
                 </Router>
-            </React.Fragment>
+            </div>
         )
     }
 }

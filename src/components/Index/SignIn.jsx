@@ -30,8 +30,8 @@ class SignIn extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <h1>index</h1>
+            <form className="signInForm" onSubmit={this.handleSubmit}>
+                <h1>SIGN IN</h1>
                 <FormInput
                     name='email'
                     type='email'

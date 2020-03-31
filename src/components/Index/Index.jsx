@@ -1,16 +1,16 @@
 import SignUp from "./SignUp"
 import SignIn from "./SignIn"
 import React, { Component } from 'react';
+import "./index.css";
 
 class Index extends Component {
 
     render() {
         return (
-            <React.Fragment >
-
+            <div className="forms">
                 <SignUp />
                 <SignIn />
-            </React.Fragment >
+            </div>
         )
     }
 }

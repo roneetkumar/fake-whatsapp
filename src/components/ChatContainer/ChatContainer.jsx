@@ -28,9 +28,12 @@ export default class ChatContainer extends Component {
 
             this.listUser.forEach(contact => {
                 this.setState({
-                    contacts: [...this.state.contacts, contact.data()]
+                    contacts: [...this.state.contacts, {...contact.data(),id:contact.id}, ]
                 })
+                // console.log(contact.data().Display);
+
             })
+
         }
     }
 
@@ -62,7 +65,12 @@ export default class ChatContainer extends Component {
                         )
                         :
                         (
-                            <Chatter contact={this.state.currentUser} input={this.state.inputValue} onChange={input => this.inputHandler(input)} />
+                            <Chatter
+                                contact={this.state.currentUser}
+                                input={this.state.inputValue}
+                                onChange={input => this.inputHandler(input)}
+                                user={this.props.user}
+                            />
                         )
                 }
             </div >
