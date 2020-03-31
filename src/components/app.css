@@ -8,7 +8,6 @@ body {
     font-family: Google Sans, sans-serif;
     user-select: none;
     background-color: #e0e0e0;
-    position: relative;
 }
 
 #root {
@@ -17,24 +16,15 @@ body {
 
 #root::before {
     content: "";
-    height: 140px;
+    height: 127px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: -1;
-    background-color: #0099AC
+    background-color: #009688
 }
 
 a {
     text-decoration: none;
     color: initial;
-}
-
-.logo{
-    position: absolute;
-    left: 50%;
-    top: 0%;
-    transform: translateX(-50%);
-    height: 140px;
-    width: 140px;
 }

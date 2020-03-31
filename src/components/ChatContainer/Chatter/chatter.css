@@ -1,6 +1,7 @@
 .chatter {
     display: grid;
     grid-template-rows: 60px 1fr max-content;
+    height: calc(100vh - 40px);
 }
 
 .chatter header {
@@ -12,6 +13,10 @@
     grid-column-gap: 6px;
     padding-right: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, .08);
+}
+
+.chatter main {
+    overflow-y: scroll;
 }
 
 .chatter .name {
@@ -61,7 +66,7 @@
     border: 1px solid #fff;
     border-radius: 21px;
     padding: 9px 12px 11px;
-    margin: 5px 10px;
+    margin: 5px 0px;
     box-sizing: border-box;
     flex: 1 1 auto;
     font-size: 15px;
@@ -73,6 +78,13 @@
     outline: none;
     width: 100%;
     will-change: width;
+    resize: none;
+}
+
+@media screen and (max-width: 1400px) {
+    .chatter {
+        height: 100vh;
+    }
 }
 
 [contenteditable=true]:empty:before {

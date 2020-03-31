@@ -1,7 +1,7 @@
 import SignUp from "./SignUp"
 import SignIn from "./SignIn"
 import React, { Component } from 'react';
-import "./index.css";
+// import "./index.css";
 
 class Index extends Component {
 

@@ -39,7 +39,6 @@ export default class App extends Component {
                 <Router basename={process.env.PUBLIC_URL} history={history}>
                     <Switch>
                         <Route exact path="/">
-                            <img className="logo" src="./logo.png" alt=""/>
                             <Index />
                         </Route>
                         <Route path="/user">

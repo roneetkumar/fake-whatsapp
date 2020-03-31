@@ -14,7 +14,8 @@ export default class ChatContainer extends Component {
         contact: {},
         currentUser: null,
         inputValue: "",
-        contacts: []
+        contacts: [],
+        to:""
     }
 
     componentDidMount() {
@@ -30,8 +31,6 @@ export default class ChatContainer extends Component {
                 this.setState({
                     contacts: [...this.state.contacts, {...contact.data(),id:contact.id}, ]
                 })
-                // console.log(contact.data().Display);
-
             })
 
         }
@@ -55,7 +54,10 @@ export default class ChatContainer extends Component {
                 <ContactList
                     user={this.props.user}
                     contacts={this.state.contacts}
-                    onChange={contact => this.setState({ currentUser: contact })}
+                    onChange={(contact, id) => this.setState({
+                        currentUser: contact,
+                        to:id
+                    })}
                 />
 
                 {
@@ -70,6 +72,7 @@ export default class ChatContainer extends Component {
                                 input={this.state.inputValue}
                                 onChange={input => this.inputHandler(input)}
                                 user={this.props.user}
+                                to={this.state.to}
                             />
                         )
                 }

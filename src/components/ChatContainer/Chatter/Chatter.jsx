@@ -15,12 +15,15 @@ export default class Chatter extends Component {
 	onInputHandler = event => {
 		var db = firestore.collection("users").doc(this.props.user.id);
 
-		if (event.key === 'Enter' && event.target.value.trim() !== '') {
+		console.log(event.target.innerText.trim());
+
+
+		if (event.key === 'Enter' && event.target.innerText.trim() !== '') {
 			console.log("enter pressed");
 
 			db.update({
 				messages: firebase.firestore.FieldValue.arrayUnion({
-					to: "roop",
+					to: this.props.to,
 					time: new Date(),
 					message: this.props.input
 				})
@@ -36,6 +39,13 @@ export default class Chatter extends Component {
 		}
 	}
 
+	filterMessages = () => {
+		return this.props.user.messages.filter((message) => {
+			return message.to === this.props.contact.id
+		})
+	}
+
+
 	render() {
 		return (
 			<div className="chatter">
@@ -48,18 +58,23 @@ export default class Chatter extends Component {
 					<AttachIcon title="Attach" fill="rgba(0,0,0,0.4)" height="24px" width="24px" />
 					<MenuIcon title="Menu" fill="rgba(0,0,0,0.4)" height="24px" width="24px" />
 				</header>
-				<ChatScreen messages={this.props.contact.messages} />
+
+
+				<ChatScreen messages={this.filterMessages()} id={this.props.id} />
+
+
 				<form>
 					<EmojiIcon title="Menu" fill="rgba(0,0,0,0.4)" height="24px" width="24px" />
 					<div className="input-wrapper">
-						<textarea className="input"
+						<div className="input"
+							contentEditable="true"
 							placeholder="Type a message"
 							onKeyPress={this.onInputHandler}
-							value={this.props.input}
+							// value={this.props.input}
 							onChange={event => {
-								this.props.onChange(event.target.value)
+								this.props.onChange(event.target.innerText)
 							}}
-						></textarea>
+						>{this.props.input}</div>
 					</div>
 					<MicIcon title="Menu" fill="rgba(0,0,0,0.4)" height="24px" width="24px" />
 				</form>

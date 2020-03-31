@@ -30,7 +30,7 @@ export default class ContactList extends Component {
                 <div className="contact-list-items" >
                     {
                         this.props.contacts.map((contact, i) => <ContactListItem
-                            onChange={(id) => this.props.onChange(contact)}
+                            onChange={(id) => this.props.onChange(contact,id)}
                             key={i} contact={contact}
                         />)
                     }
