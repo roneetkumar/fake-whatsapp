@@ -1,9 +1,13 @@
-.message.from {
+.message.right, .message.left {
     margin: 20px 0;
     text-align: right;
 }
 
-.from h1 {
+.message.left {
+    text-align: left;
+}
+
+.right h1, .left h1 {
     background: #dcf8c6;
     width: max-content;
     display: inline-block;
@@ -16,7 +20,14 @@
     position: relative;
 }
 
-.from h1::after {
+.left h1 {
+    margin-right: initial;
+    margin-left: 9%;
+    border-top-right-radius: 7.5px;
+    border-top-left-radius: 0;
+}
+
+.right h1::after, .left h1::after {
     content: "";
     width: 0px;
     height: 0px;
@@ -30,7 +41,12 @@
     transform: rotate(-60deg);
 }
 
-.from h1 span {
+.left h1::after {
+    right: initial;
+    left: -10px;
+}
+
+.right h1 span, .left h1 span {
     margin: 0 14px;
     font-size: 11px;
     transform: translateY(5px);

@@ -10,7 +10,6 @@ import ContactListItem from "./ContactListItem";
 export default class ContactList extends Component {
 
     render() {
-
         return (
             <div className='contact-list-container'>
                 <header>
@@ -29,8 +28,8 @@ export default class ContactList extends Component {
 
                 <div className="contact-list-items" >
                     {
-                        this.props.contacts.map((contact, i) => <ContactListItem
-                            onChange={(id) => this.props.onChange(contact,id)}
+                      this.props.contacts.map((contact, i) => <ContactListItem
+                            onChange={(friend) => this.props.onChange(friend)}
                             key={i} contact={contact}
                         />)
                     }

@@ -13,13 +13,13 @@ export default class ChatContainer extends Component {
     state = {
         contact: {},
         currentUser: null,
-        inputValue: "",
         contacts: [],
-        to:""
+        friend: null
     }
 
     componentDidMount() {
         this.getListUser()
+
     }
 
     getListUser = async () => {
@@ -29,10 +29,9 @@ export default class ChatContainer extends Component {
 
             this.listUser.forEach(contact => {
                 this.setState({
-                    contacts: [...this.state.contacts, {...contact.data(),id:contact.id}, ]
+                    contacts: [...this.state.contacts, { ...contact.data(), id: contact.id },]
                 })
             })
-
         }
     }
 
@@ -42,39 +41,30 @@ export default class ChatContainer extends Component {
     //     })
     // }
 
-    inputHandler = input => {
-        this.setState({
-            inputValue: input
-        })
-    }
+    // inputHandler = input => {
+    //     this.setState({
+    //         inputValue: input
+    //     })
+    // }
 
     render() {
+
         return (
             <div className='chat-container'>
                 <ContactList
                     user={this.props.user}
                     contacts={this.state.contacts}
-                    onChange={(contact, id) => this.setState({
-                        currentUser: contact,
-                        to:id
-                    })}
+                    onChange={(friend) => this.setState({friend,})}
                 />
 
                 {
-                    this.state.currentUser == null ?
-                        (
-                            <Display />
-                        )
+                    this.state.friend == null ?
+                        (<Display />)
                         :
-                        (
-                            <Chatter
-                                contact={this.state.currentUser}
-                                input={this.state.inputValue}
-                                onChange={input => this.inputHandler(input)}
-                                user={this.props.user}
-                                to={this.state.to}
-                            />
-                        )
+                        (<Chatter
+                            user={this.props.user}
+                            friend={this.state.friend}
+                        />)
                 }
             </div >
         )

@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import "./contact-list-item.css"
 
 export default class ContactListItem extends Component {
+
     render() {
         return (
             <div
                 className="contact-list-item"
-                onClick={() => this.props.onChange(this.props.contact.id)}>
+                onClick={() => this.props.onChange(this.props.contact)}>
                 <img src="https://thispersondoesnotexist.com/image" alt="img" />
                 <div className="info-wrapper">
                     <h3>
