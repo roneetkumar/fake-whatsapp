@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/fake-whatsapp/static/css/main.1691b9b4.chunk.css",
-    "main.js": "/fake-whatsapp/static/js/main.4c9e1db3.chunk.js",
-    "main.js.map": "/fake-whatsapp/static/js/main.4c9e1db3.chunk.js.map",
+    "main.js": "/fake-whatsapp/static/js/main.657568d3.chunk.js",
+    "main.js.map": "/fake-whatsapp/static/js/main.657568d3.chunk.js.map",
     "runtime-main.js": "/fake-whatsapp/static/js/runtime-main.c2409854.js",
     "runtime-main.js.map": "/fake-whatsapp/static/js/runtime-main.c2409854.js.map",
     "static/js/2.db3cdb1c.chunk.js": "/fake-whatsapp/static/js/2.db3cdb1c.chunk.js",
     "static/js/2.db3cdb1c.chunk.js.map": "/fake-whatsapp/static/js/2.db3cdb1c.chunk.js.map",
     "index.html": "/fake-whatsapp/index.html",
-    "precache-manifest.9bd13146843334da1df6ee452a9aa4c6.js": "/fake-whatsapp/precache-manifest.9bd13146843334da1df6ee452a9aa4c6.js",
+    "precache-manifest.3ac4407dc7f101c28daa6cd279afe788.js": "/fake-whatsapp/precache-manifest.3ac4407dc7f101c28daa6cd279afe788.js",
     "service-worker.js": "/fake-whatsapp/service-worker.js",
     "static/css/main.1691b9b4.chunk.css.map": "/fake-whatsapp/static/css/main.1691b9b4.chunk.css.map",
     "static/js/2.db3cdb1c.chunk.js.LICENSE": "/fake-whatsapp/static/js/2.db3cdb1c.chunk.js.LICENSE",
@@ -25,6 +25,6 @@
     "static/js/runtime-main.c2409854.js",
     "static/js/2.db3cdb1c.chunk.js",
     "static/css/main.1691b9b4.chunk.css",
-    "static/js/main.4c9e1db3.chunk.js"
+    "static/js/main.657568d3.chunk.js"
   ]
 }
